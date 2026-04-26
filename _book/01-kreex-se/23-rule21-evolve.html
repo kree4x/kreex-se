@@ -1,0 +1,773 @@
+
+<!DOCTYPE HTML>
+<html lang="cn" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Rule 21: 程序员不会消失，只会进化 · KreeX: 软件工程范式</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        <meta name="author" content="RV, rodney.vin@gmail.com">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="22-rule20-log-2-devops.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-preface/">
+            
+                <a href="../00-preface/">
+            
+                    
+                    声明在前
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../00-preface/01-stack-armor.html">
+            
+                <a href="../00-preface/01-stack-armor.html">
+            
+                    
+                    先行叠甲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../00-preface/02-ai-programming.html">
+            
+                <a href="../00-preface/02-ai-programming.html">
+            
+                    
+                    关于AI Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../00-preface/03-coding-programming.html">
+            
+                <a href="../00-preface/03-coding-programming.html">
+            
+                    
+                    Coding与Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../00-preface/04-its-engineering.html">
+            
+                <a href="../00-preface/04-its-engineering.html">
+            
+                    
+                    工程，而不是技术能力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../00-preface/05-software-enginerring.html">
+            
+                <a href="../00-preface/05-software-enginerring.html">
+            
+                    
+                    面向AI Programming的软件工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../00-preface/06-ai-orientation-service-call.html">
+            
+                <a href="../00-preface/06-ai-orientation-service-call.html">
+            
+                    
+                    面向AI Programming的服务调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../00-preface/07-what-we-will-do.html">
+            
+                <a href="../00-preface/07-what-we-will-do.html">
+            
+                    
+                    要做什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../00-preface/08-why-this-name.html">
+            
+                <a href="../00-preface/08-why-this-name.html">
+            
+                    
+                    名字的由来
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    面向AI的软件工程范式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="00-about-author.html">
+            
+                <a href="00-about-author.html">
+            
+                    
+                    关于作者RV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="00-about-author-2.html">
+            
+                <a href="00-about-author-2.html">
+            
+                    
+                    AI建议的自我指涉
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="01-classify-se.html">
+            
+                <a href="01-classify-se.html">
+            
+                    
+                    四种范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="02-laws.html">
+            
+                <a href="02-laws.html">
+            
+                    
+                    AI驱动范式下的核心原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="03-rule1-gray-box.html">
+            
+                <a href="03-rule1-gray-box.html">
+            
+                    
+                    Rule 1: 软件成为灰盒，甚至黑盒
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="04-rule2-human-machine-constract.html">
+            
+                <a href="04-rule2-human-machine-constract.html">
+            
+                    
+                    Rule 2: 需求定义是唯一的人机契约
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="05-rule3-no-pure-nl.html">
+            
+                <a href="05-rule3-no-pure-nl.html">
+            
+                    
+                    Rule 3:  需求定义语言=自然语言+图形UI原型+模型语言+算法伪代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="06-rule4-req-produce-mode.html">
+            
+                <a href="06-rule4-req-produce-mode.html">
+            
+                    
+                    Rule 4: 需求定义的生成模式：AI辅助生成，人类决策确定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="07-rule5-req-over-dev.html">
+            
+                <a href="07-rule5-req-over-dev.html">
+            
+                    
+                    Rule 5: 需求管理是核心：Requirement Over Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="08-rule6-kill-ide.html">
+            
+                <a href="08-rule6-kill-ide.html">
+            
+                    
+                    Rule 6: Kill IDE, Let IRE Be Born:  Integrated Requirement Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="09-rule7-arch-agents.html">
+            
+                <a href="09-rule7-arch-agents.html">
+            
+                    
+                    Rule 7: 架构师+AI Agents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="10-rule8-only-person.html">
+            
+                <a href="10-rule8-only-person.html">
+            
+                    
+                    Rule 8: 架构师是唯一的人类：去除人<-->人沟通环节，避免知识传递及重新理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="11-rule9-auto-after-arch.html">
+            
+                <a href="11-rule9-auto-after-arch.html">
+            
+                    
+                    Rule 9: 架构师之后全程自动化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="12-rule10-noone-coding.html">
+            
+                <a href="12-rule10-noone-coding.html">
+            
+                    
+                    Rule 10: 无人Coding，除非迫不得已
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="13-rule11-its-infrastructure.html">
+            
+                <a href="13-rule11-its-infrastructure.html">
+            
+                    
+                    Rule 11: 将LLM+AI Agents视为软件工程之外的基础设施
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="14-rule12-use-rpc.html">
+            
+                <a href="14-rule12-use-rpc.html">
+            
+                    
+                    Rule 12: 使用透明RPC微服务架构简化需求定义、及代码生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="15-rule13-split-agents.html">
+            
+                <a href="15-rule13-split-agents.html">
+            
+                    
+                    Rule 13: AI Agents需要分工：限定领域的准确度优先
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="16-rule14-agents-direct-comm.html">
+            
+                <a href="16-rule14-agents-direct-comm.html">
+            
+                    
+                    Rule 14: AI Agents直接通信协作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="17-rule15-human-2-ai.html">
+            
+                <a href="17-rule15-human-2-ai.html">
+            
+                    
+                    Rule 15: 纯人->人机协作->无人：极限逼近无人模式使用MDA的方法论：CIM->PIM->PSM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="18-rule16-two-loop.html">
+            
+                <a href="18-rule16-two-loop.html">
+            
+                    
+                    Rule 16: 双圈运行，无阻力升级：外圈AI范式，内圈传统DevOps体系，外圈输出注入内圈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="19-rule17-obversable.html">
+            
+                <a href="19-rule17-obversable.html">
+            
+                    
+                    Rule 17: AI自动化流程的可观测性是强制约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="20-rule18-take-over.html">
+            
+                <a href="20-rule18-take-over.html">
+            
+                    
+                    Rule 18: 随时双向接管能力是强制约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="21-rule19-two-llm.html">
+            
+                <a href="21-rule19-two-llm.html">
+            
+                    
+                    Rule 19: 验证与生成环节环节的LLM必须不同
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="22-rule20-log-2-devops.html">
+            
+                <a href="22-rule20-log-2-devops.html">
+            
+                    
+                    Rule 20: 使用DevOps平台作为留痕平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.25" data-path="23-rule21-evolve.html">
+            
+                <a href="23-rule21-evolve.html">
+            
+                    
+                    Rule 21: 程序员不会消失，只会进化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Rule 21: 程序员不会消失，只会进化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rule-21-程序员不会消失，只会进化">Rule 21: 程序员不会消失，只会进化</h1>
+<blockquote>
+<p>Created By <a href="mailto:rodney.vin@gmail.com" target="_blank">RV</a>, and licensed with Creative Commons "<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>"</p>
+</blockquote>
+<p>即使我们走到了AGI诞生这一步，即使“传统软件行业”消亡，我也不认为“程序员”会消失。</p>
+<p>程序员，不会消失，只会进化。</p>
+<p>软件行业向最终用户交付软件系统，这只是一个浮在表面的假象，而软件行业实际交付的价值是“确定性”。</p>
+<p>软件行业的输入是模糊的、不确定的、随时需要调整的用户需求。</p>
+<p>软件行业的整体运作过程，本质是理解、分解、重组此种需求，最后以程序语言这种形式化符号系统，通过严格的语法和语义规则来消除原始需求的不确定性。</p>
+<p>用户的需求具有内在的、固有的不确定性和复杂性。而整体上，“用户”更缺乏抽象思维能力、精准的语言表达能力，也难于系统化评估AI输出是否符合自身需求。</p>
+<p>在从用户需求到软件产品的完整价值链中，传统软件行业所承担的大部分职责都可以被AGI取代。但是，帮助最终用户消除原始需求的不确定性，这个核心的职责不会完全消失。</p>
+<p>即使在AGI时代，也会有更熟悉AGI运作方式、同时具有更强抽象思维能力、语言表达能力的人群作为类似于“冥想引导师”之类的角色出现。他们就是不再被称为“程序员”的“程序员”。</p>
+<p>遑论在这个弱AI时代，传统的软件行业在引入AI后，将带来流程的革命性提速与效率的跨越式提升，整个软件工程链条上的相关人员只会进行职责重划、位置移调，“消失”两个字太过轻佻与天真。</p>
+<p>AI的引入将驱动软件行业效率的极大提升，使“软件”真正成为一种普惠的社会性产品，单一核心开发团队会更精干，但围绕AI软件生态的庞大从业者群体将迅速形成，软件行业的总就业人数将在波动中实现长期增长。</p>
+<h4 id="程序员的核心特质">“程序员”的核心特质</h4>
+<p>行业外的人，一般把我们这些软件行业的从业人员都泛泛地称为“程序员”。</p>
+<p>程序员，在圈外人看来，有一种“Nerd”的特质。而正是这种特质，反而是这个群体区别于普罗大众的核心能力。</p>
+<ul>
+<li>系统思维与抽象能力</li>
+<li>严谨的逻辑思维与问题分解能力</li>
+<li>协作精神与开放心态 </li>
+<li>持续学习与技术热情 </li>
+<li>追求简单、极致的心理倾向</li>
+<li>创造力与工程美学</li>
+</ul>
+<p>在AI时代，这种稀有特质的组合，构成了程序员这个群体核心的竞争力，作为普通人群与AI沟通的桥梁，他们的角色无可替代。</p>
+<p>在AI时代，初级、重复的编码工作将被自动化，但理解复杂需求、定义问题边界、设计系统架构、评估方案优劣、确保伦理安全等高层级工作，所需的恰恰是需要这套特质的组合。</p>
+<h4 id="ai时代，软件工程将回归本质">AI时代，软件工程将回归本质</h4>
+<p>传统的软件工程时代，我们常常潜意识中将Coding作为软件行业的核心，忽视了Coding仅仅是实现目标的一种手段，遗忘了如何消除“不确定性”才是软件工程的本质。</p>
+<p>AI时代，AI Agents接替人类承担Coding、测试、部署、运维这些重复性、无创造性的岗位，这本质是使用工具去更有效地消除“偶然性困难”。</p>
+<p>AI时代，人类的工作会越来越集中于如何消除系统内在固有的不确定性、复杂性这些“本质性困难”。</p>
+<p>此时，程序员不再是程序员，但同时程序员也在成为更纯粹的程序员。</p>
+<p>我们终将回归到软件工程的原始定义和最高使命——<strong>运用工程化的方法，通过构建软件系统，来解决复杂世界的现实问题</strong>。</p>
+<h4 id="ai辅助与ai驱动，弱ai时代，程序员的进化之路">AI辅助与AI驱动，弱AI时代，程序员的进化之路</h4>
+<p>但是，这种“回归本质”，并非自然、顺畅、毫无痛苦地发生。对我们而言，这更像一条在技术变革的驱策下，从传统舒适区迈向未知荒野的拓荒之路，初期必然充斥着焦虑与不安。</p>
+<p>我们已有的思维特质，是进化之路的起点和基石。</p>
+<p>在此基础上，精准对接用户需求、熟稔软件知识、精通AI运作，无论未来岗位被称为“智能体指挥师”还是“超级架构师”，这都将构成我们的核心竞争力，成为我们安身立命的行业壁垒。</p>
+<p>AI既不会让软件工程消失，也不会使程序员贬值，反而会通过剥离其表层，让其最珍贵的“运用抽象与逻辑征服复杂性”这一核心擦去浮尘、熠熠生辉。</p>
+<p>软件工程将从一个偏重“技艺”的行业，进化为一个更偏重“智慧”的行业。对于我们程序员个人而言，这将是一次技能的全面升级，更是目标与价值的纯化与升华。</p>
+<p>前路已在我们脚下展开，未来已来。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="22-rule20-log-2-devops.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Rule 20: 使用DevOps平台作为留痕平台">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Rule 21: 程序员不会消失，只会进化","level":"1.3.25","depth":2,"previous":{"title":"Rule 20: 使用DevOps平台作为留痕平台","level":"1.3.24","depth":2,"path":"01-kreex-se/22-rule20-log-2-devops.md","ref":"01-kreex-se/22-rule20-log-2-devops.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pubdate":"2026-04-26","author":"RV, rodney.vin@gmail.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"rights":"CC BY-NC-ND 4.0","title":"KreeX: 软件工程范式","language":"cn","gitbook":"*","publisher":"Self-Published","description":"面向面向AI Programming的软件工程范式思考与实践"},"file":{"path":"01-kreex-se/23-rule21-evolve.md","mtime":"2026-04-26T04:38:19.014Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-04-26T05:53:23.027Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

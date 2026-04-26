@@ -1,0 +1,845 @@
+
+<!DOCTYPE HTML>
+<html lang="cn" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Rule 12: 使用透明RPC微服务架构简化需求定义、及代码生成 · KreeX: 软件工程范式</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        <meta name="author" content="RV, rodney.vin@gmail.com">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="15-rule13-split-agents.html" />
+    
+    
+    <link rel="prev" href="13-rule11-its-infrastructure.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-preface/">
+            
+                <a href="../00-preface/">
+            
+                    
+                    声明在前
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../00-preface/01-stack-armor.html">
+            
+                <a href="../00-preface/01-stack-armor.html">
+            
+                    
+                    先行叠甲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../00-preface/02-ai-programming.html">
+            
+                <a href="../00-preface/02-ai-programming.html">
+            
+                    
+                    关于AI Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../00-preface/03-coding-programming.html">
+            
+                <a href="../00-preface/03-coding-programming.html">
+            
+                    
+                    Coding与Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../00-preface/04-its-engineering.html">
+            
+                <a href="../00-preface/04-its-engineering.html">
+            
+                    
+                    工程，而不是技术能力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../00-preface/05-software-enginerring.html">
+            
+                <a href="../00-preface/05-software-enginerring.html">
+            
+                    
+                    面向AI Programming的软件工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../00-preface/06-ai-orientation-service-call.html">
+            
+                <a href="../00-preface/06-ai-orientation-service-call.html">
+            
+                    
+                    面向AI Programming的服务调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../00-preface/07-what-we-will-do.html">
+            
+                <a href="../00-preface/07-what-we-will-do.html">
+            
+                    
+                    要做什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../00-preface/08-why-this-name.html">
+            
+                <a href="../00-preface/08-why-this-name.html">
+            
+                    
+                    名字的由来
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    面向AI的软件工程范式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="00-about-author.html">
+            
+                <a href="00-about-author.html">
+            
+                    
+                    关于作者RV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="00-about-author-2.html">
+            
+                <a href="00-about-author-2.html">
+            
+                    
+                    AI建议的自我指涉
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="01-classify-se.html">
+            
+                <a href="01-classify-se.html">
+            
+                    
+                    四种范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="02-laws.html">
+            
+                <a href="02-laws.html">
+            
+                    
+                    AI驱动范式下的核心原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="03-rule1-gray-box.html">
+            
+                <a href="03-rule1-gray-box.html">
+            
+                    
+                    Rule 1: 软件成为灰盒，甚至黑盒
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="04-rule2-human-machine-constract.html">
+            
+                <a href="04-rule2-human-machine-constract.html">
+            
+                    
+                    Rule 2: 需求定义是唯一的人机契约
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="05-rule3-no-pure-nl.html">
+            
+                <a href="05-rule3-no-pure-nl.html">
+            
+                    
+                    Rule 3:  需求定义语言=自然语言+图形UI原型+模型语言+算法伪代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="06-rule4-req-produce-mode.html">
+            
+                <a href="06-rule4-req-produce-mode.html">
+            
+                    
+                    Rule 4: 需求定义的生成模式：AI辅助生成，人类决策确定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="07-rule5-req-over-dev.html">
+            
+                <a href="07-rule5-req-over-dev.html">
+            
+                    
+                    Rule 5: 需求管理是核心：Requirement Over Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="08-rule6-kill-ide.html">
+            
+                <a href="08-rule6-kill-ide.html">
+            
+                    
+                    Rule 6: Kill IDE, Let IRE Be Born:  Integrated Requirement Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="09-rule7-arch-agents.html">
+            
+                <a href="09-rule7-arch-agents.html">
+            
+                    
+                    Rule 7: 架构师+AI Agents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="10-rule8-only-person.html">
+            
+                <a href="10-rule8-only-person.html">
+            
+                    
+                    Rule 8: 架构师是唯一的人类：去除人<-->人沟通环节，避免知识传递及重新理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="11-rule9-auto-after-arch.html">
+            
+                <a href="11-rule9-auto-after-arch.html">
+            
+                    
+                    Rule 9: 架构师之后全程自动化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="12-rule10-noone-coding.html">
+            
+                <a href="12-rule10-noone-coding.html">
+            
+                    
+                    Rule 10: 无人Coding，除非迫不得已
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="13-rule11-its-infrastructure.html">
+            
+                <a href="13-rule11-its-infrastructure.html">
+            
+                    
+                    Rule 11: 将LLM+AI Agents视为软件工程之外的基础设施
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.16" data-path="14-rule12-use-rpc.html">
+            
+                <a href="14-rule12-use-rpc.html">
+            
+                    
+                    Rule 12: 使用透明RPC微服务架构简化需求定义、及代码生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="15-rule13-split-agents.html">
+            
+                <a href="15-rule13-split-agents.html">
+            
+                    
+                    Rule 13: AI Agents需要分工：限定领域的准确度优先
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="16-rule14-agents-direct-comm.html">
+            
+                <a href="16-rule14-agents-direct-comm.html">
+            
+                    
+                    Rule 14: AI Agents直接通信协作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="17-rule15-human-2-ai.html">
+            
+                <a href="17-rule15-human-2-ai.html">
+            
+                    
+                    Rule 15: 纯人->人机协作->无人：极限逼近无人模式使用MDA的方法论：CIM->PIM->PSM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="18-rule16-two-loop.html">
+            
+                <a href="18-rule16-two-loop.html">
+            
+                    
+                    Rule 16: 双圈运行，无阻力升级：外圈AI范式，内圈传统DevOps体系，外圈输出注入内圈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="19-rule17-obversable.html">
+            
+                <a href="19-rule17-obversable.html">
+            
+                    
+                    Rule 17: AI自动化流程的可观测性是强制约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="20-rule18-take-over.html">
+            
+                <a href="20-rule18-take-over.html">
+            
+                    
+                    Rule 18: 随时双向接管能力是强制约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="21-rule19-two-llm.html">
+            
+                <a href="21-rule19-two-llm.html">
+            
+                    
+                    Rule 19: 验证与生成环节环节的LLM必须不同
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="22-rule20-log-2-devops.html">
+            
+                <a href="22-rule20-log-2-devops.html">
+            
+                    
+                    Rule 20: 使用DevOps平台作为留痕平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="23-rule21-evolve.html">
+            
+                <a href="23-rule21-evolve.html">
+            
+                    
+                    Rule 21: 程序员不会消失，只会进化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Rule 12: 使用透明RPC微服务架构简化需求定义、及代码生成</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rule-12-使用透明rpc微服务架构简化需求定义及代码生成">Rule 12: 使用透明RPC微服务架构简化需求定义及代码生成</h1>
+<blockquote>
+<p>Created By <a href="mailto:rodney.vin@gmail.com" target="_blank">RV</a>, and licensed with Creative Commons "<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>"</p>
+</blockquote>
+<p>细细思量，这其实够不到一个Rule所要求的约束性、强制性，更类似于软件设计SOLID原则之类的Principle，更倾向于是一个最佳实践推荐原则。</p>
+<p>在AI Programming范式下，AI有能力处理各种技术架构，在各种技术架构的约束下可靠地生成源码。</p>
+<p>我，只是认为，在AI Programming的范式下，由AI来生成代码，并在后续进行运行时追踪Tracing时，动态语言 + 一个面向AI设计的透明RPC + 微服务架构，会是一个“合适场景使用合适工具”的绝佳例子。</p>
+<p>我们在<a href="https://zhuanlan.zhihu.com/p/2027763667572208559" target="_blank">《面向AI Programming的服务调用》</a>这篇文章中，泛泛讨论过期望中的面向AI Programming的服务调用应具有的几个特征：</p>
+<ol>
+<li>微服务架构是天选之子</li>
+<li>No Schema: Scheme In AI, Not Service</li>
+<li>统一服务调用范式：透明RPC</li>
+<li>异构通信网格：通信与服务无关</li>
+<li>服务治理原生<ul>
+<li>实时可观测性，调用实时透明性，以一次调用为粒度，动态开启的通信-服务链路跟踪</li>
+<li>动态发现</li>
+<li>服务健康检查</li>
+<li>服务选择：负载、多路由，自动轮换、失败重试....</li>
+<li>流控：限流、熔断、降级</li>
+<li>服务集群Select-&gt;Reduce调用模式</li>
+<li>……</li>
+</ul>
+</li>
+<li>源码即可执行代码，脚本语言具有更大的优势</li>
+</ol>
+<h4 id="层展涌现出的系统级能力">层展涌现出的系统级能力</h4>
+<p>所有上述讨论，太偏重于定性，太碎片化，太偏重于细节性的技术层面。</p>
+<p>我们应该将上述的一切，嵌入到面向AI Programming这个大的前提与体系。</p>
+<p>然后，再来理解和体会，上述特征融入后整个体系所层展出的高度的逻辑一致性、极度简致的美感、以及工程层面的极度简化。</p>
+<p><strong>分开来看，它们是一粒粒散沙，平淡无奇。</strong></p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/2029176660499472788" target="_blank">Rule 3: 需求定义语言=自然语言+图形UI原型+模型语言+算法伪代码</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/2029293513146115457" target="_blank">Rule 4: 需求定义的生成模式：AI辅助生成，人类决策确定</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/2029959525109847568" target="_blank">Rule 9: 架构师之后全程自动化</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/2029253170899986336" target="_blank">Rule 10: 无人Coding，除非迫不得已</a></li>
+<li>透明调用，抹杀本地与远程语法差别</li>
+<li>Scheme In AI, Not Service</li>
+<li>实时可观测性，调用实时透明性，以一次调用为粒度，动态开启的通信-服务链路跟踪</li>
+<li>动态发现</li>
+<li>服务选择：负载、多路由，自动轮换、失败重试....</li>
+<li>服务集群Select-&gt;Reduce调用模式</li>
+<li>……</li>
+</ul>
+<p><strong>而将上述原则与技术特征融合在一起，我们可以使用它们搭建一座雄伟的通天之塔。</strong></p>
+<p>一个极简，逻辑缜密，雄伟的蓝图，就在我们眼前浮现。</p>
+<ol>
+<li>Rule 3，使用改良的UML静态图、活动图，辅以流程图、算法伪代码，此种结构化语言，可以驱动AI以可接受的准确度可靠处理。</li>
+<li>Rule 4，将需求拆分为小模块，每个小模块是一个微服务的粒度，多个小模块组合为一个大的模块，直至搭建整个系统</li>
+<li>微服务架构是天选之子，一个模块就是一个微服务</li>
+<li>强类型约束的IDL：UML描述的类、方法、参数、返回值，是一个强类型约束的IDL</li>
+<li>服务交互过程结构化、语义化：UML的活动图描述了微服务、本地、远程方法间的交互过程</li>
+<li>改良UML，为其加入事务、远程方法标志等元素</li>
+<li>透明方法调用，抹去本地调用和远程调用差别</li>
+<li>服务治理原生，由框架来处理分布式远程服务与本地调用固有的差异性</li>
+<li>Schema In AI， AI持有UML描述的强类型IDL，Service代码由AI动态生成</li>
+<li>No Schema In Service，服务层面不需要定义Schema，AI在全局持有</li>
+<li>源码即可执行代码，脚本语言具有更大的优势</li>
+<li>通信与服务无关，服务与网络分离，剥离AI生成代码时对网络通信复杂处理</li>
+<li>运行时类型安全性：AI可以依据UML所定义的IDL在生成代码时注入强制性的语法、逻辑校验。</li>
+<li>运行时事务管理：AI根据改良UML加入的事务标志，生成事务控制、失败回滚代码</li>
+<li>以一次调用为粒度的实时观测性：Tracing不采样，按需开启</li>
+<li>Tracing数据是由Action Event构成的带分支、合并的混合多时间线Timeline，每个Event是某个时刻的系统状态切片。</li>
+<li>Tracing Timeline，它为AI提供的是服务调用全栈分析的数据、参数状态，绝非日志，绝非日志，绝非日志。重要的事情说三遍。</li>
+<li>动态服务 + No Schema + 脚本语言，可以使AI以我思故我在的方式编程、Mock测试、集成测试。</li>
+<li>Rule 9，架构师，需求之后，Coding、DevOps的全程自动化</li>
+</ol>
+<p>至此，闭环完毕！</p>
+<h4 id="极大的便利性">极大的便利性</h4>
+<ul>
+<li>与LLM的强类型思维认知对齐<ul>
+<li>LLM本身基于概率生成文本，但UML强类型接口为它提供了确定性约束</li>
+<li>UML作为IDL，作为代码生成“契约”使LLM的代码生成行为可预测、可验证</li>
+<li>每个RPC调用都有明确的输入输出类型，减少LLM的猜测空间</li>
+</ul>
+</li>
+<li>实现上下文的高效利用，LLM上下文中的知识结构恰好匹配RPC架构<ul>
+<li>上下文包含：<ul>
+<li>UML动态图描述的服务拓扑图 (Service A → Service B → Service C)</li>
+<li>UML静态结构描述IDL定义文件 </li>
+<li>框架规范 (超时配置、重试策略、熔断规则)</li>
+<li>代码生成模板</li>
+</ul>
+</li>
+<li>LLM只需“填空”生成业务逻辑<ul>
+<li>LLM不需要理解网络通信的复杂性，只需按模板生成</li>
+<li>分布式系统的“难题”被框架吸收，LLM处理“简单题”</li>
+<li>LLM可专注于单个服务的业务逻辑完整性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>生成的微服务代码的可组合性<ul>
+<li>每个服务是独立的代码生成单元</li>
+<li>接口不变的情况下，可独立修改和重新生成单个服务</li>
+</ul>
+</li>
+<li>类型安全与代码生成的高度确定性</li>
+<li>设计即代码，需求即代码</li>
+<li>具备上述特征的透明RPC框架，带来架构治理的自动化。AI 生成的代码自带可观测性和容错能力。架构规范通过 UML 强制执行，而非靠人工 Code Review。</li>
+</ul>
+<h4 id="这是一条捷径">这是一条捷径</h4>
+<p>AI基于类UML定义的强类型IDL，采用动态语言、无Schema的透明RPC模式进行代码生成、构建与测试。</p>
+<p>再结合由ActionEvent组成的Timeline所提供的全链路动态跟踪能力，进行错误分析、修复与迭代演进。</p>
+<p>这构成了一条极简的便捷之路。</p>
+<p>在面向AI Programming范式下，这条捷径所能带来的效率提升，若转而采用其他技术体系，是否可简单实现尚在两可之间，但是难免会引入更多的复杂性，带来更大的成本和不确定性风险。</p>
+<p>论证完毕。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="13-rule11-its-infrastructure.html" class="navigation navigation-prev " aria-label="Previous page: Rule 11: 将LLM+AI Agents视为软件工程之外的基础设施">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="15-rule13-split-agents.html" class="navigation navigation-next " aria-label="Next page: Rule 13: AI Agents需要分工：限定领域的准确度优先">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Rule 12: 使用透明RPC微服务架构简化需求定义、及代码生成","level":"1.3.16","depth":2,"next":{"title":"Rule 13: AI Agents需要分工：限定领域的准确度优先","level":"1.3.17","depth":2,"path":"01-kreex-se/15-rule13-split-agents.md","ref":"01-kreex-se/15-rule13-split-agents.md","articles":[]},"previous":{"title":"Rule 11: 将LLM+AI Agents视为软件工程之外的基础设施","level":"1.3.15","depth":2,"path":"01-kreex-se/13-rule11-its-infrastructure.md","ref":"01-kreex-se/13-rule11-its-infrastructure.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pubdate":"2026-04-26","author":"RV, rodney.vin@gmail.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"rights":"CC BY-NC-ND 4.0","title":"KreeX: 软件工程范式","language":"cn","gitbook":"*","publisher":"Self-Published","description":"面向面向AI Programming的软件工程范式思考与实践"},"file":{"path":"01-kreex-se/14-rule12-use-rpc.md","mtime":"2026-04-23T05:27:59.986Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-04-26T05:53:23.027Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,770 @@
+
+<!DOCTYPE HTML>
+<html lang="cn" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Rule 6: Kill IDE, Let IRE Be Born:  Integrated Requirement Environment · KreeX: 软件工程范式</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        <meta name="author" content="RV, rodney.vin@gmail.com">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="09-rule7-arch-agents.html" />
+    
+    
+    <link rel="prev" href="07-rule5-req-over-dev.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-preface/">
+            
+                <a href="../00-preface/">
+            
+                    
+                    声明在前
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../00-preface/01-stack-armor.html">
+            
+                <a href="../00-preface/01-stack-armor.html">
+            
+                    
+                    先行叠甲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../00-preface/02-ai-programming.html">
+            
+                <a href="../00-preface/02-ai-programming.html">
+            
+                    
+                    关于AI Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../00-preface/03-coding-programming.html">
+            
+                <a href="../00-preface/03-coding-programming.html">
+            
+                    
+                    Coding与Programming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../00-preface/04-its-engineering.html">
+            
+                <a href="../00-preface/04-its-engineering.html">
+            
+                    
+                    工程，而不是技术能力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../00-preface/05-software-enginerring.html">
+            
+                <a href="../00-preface/05-software-enginerring.html">
+            
+                    
+                    面向AI Programming的软件工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../00-preface/06-ai-orientation-service-call.html">
+            
+                <a href="../00-preface/06-ai-orientation-service-call.html">
+            
+                    
+                    面向AI Programming的服务调用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../00-preface/07-what-we-will-do.html">
+            
+                <a href="../00-preface/07-what-we-will-do.html">
+            
+                    
+                    要做什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../00-preface/08-why-this-name.html">
+            
+                <a href="../00-preface/08-why-this-name.html">
+            
+                    
+                    名字的由来
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    面向AI的软件工程范式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="00-about-author.html">
+            
+                <a href="00-about-author.html">
+            
+                    
+                    关于作者RV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="00-about-author-2.html">
+            
+                <a href="00-about-author-2.html">
+            
+                    
+                    AI建议的自我指涉
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="01-classify-se.html">
+            
+                <a href="01-classify-se.html">
+            
+                    
+                    四种范式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="02-laws.html">
+            
+                <a href="02-laws.html">
+            
+                    
+                    AI驱动范式下的核心原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="03-rule1-gray-box.html">
+            
+                <a href="03-rule1-gray-box.html">
+            
+                    
+                    Rule 1: 软件成为灰盒，甚至黑盒
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="04-rule2-human-machine-constract.html">
+            
+                <a href="04-rule2-human-machine-constract.html">
+            
+                    
+                    Rule 2: 需求定义是唯一的人机契约
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="05-rule3-no-pure-nl.html">
+            
+                <a href="05-rule3-no-pure-nl.html">
+            
+                    
+                    Rule 3:  需求定义语言=自然语言+图形UI原型+模型语言+算法伪代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="06-rule4-req-produce-mode.html">
+            
+                <a href="06-rule4-req-produce-mode.html">
+            
+                    
+                    Rule 4: 需求定义的生成模式：AI辅助生成，人类决策确定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="07-rule5-req-over-dev.html">
+            
+                <a href="07-rule5-req-over-dev.html">
+            
+                    
+                    Rule 5: 需求管理是核心：Requirement Over Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.10" data-path="08-rule6-kill-ide.html">
+            
+                <a href="08-rule6-kill-ide.html">
+            
+                    
+                    Rule 6: Kill IDE, Let IRE Be Born:  Integrated Requirement Environment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="09-rule7-arch-agents.html">
+            
+                <a href="09-rule7-arch-agents.html">
+            
+                    
+                    Rule 7: 架构师+AI Agents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="10-rule8-only-person.html">
+            
+                <a href="10-rule8-only-person.html">
+            
+                    
+                    Rule 8: 架构师是唯一的人类：去除人<-->人沟通环节，避免知识传递及重新理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="11-rule9-auto-after-arch.html">
+            
+                <a href="11-rule9-auto-after-arch.html">
+            
+                    
+                    Rule 9: 架构师之后全程自动化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="12-rule10-noone-coding.html">
+            
+                <a href="12-rule10-noone-coding.html">
+            
+                    
+                    Rule 10: 无人Coding，除非迫不得已
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="13-rule11-its-infrastructure.html">
+            
+                <a href="13-rule11-its-infrastructure.html">
+            
+                    
+                    Rule 11: 将LLM+AI Agents视为软件工程之外的基础设施
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="14-rule12-use-rpc.html">
+            
+                <a href="14-rule12-use-rpc.html">
+            
+                    
+                    Rule 12: 使用透明RPC微服务架构简化需求定义、及代码生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="15-rule13-split-agents.html">
+            
+                <a href="15-rule13-split-agents.html">
+            
+                    
+                    Rule 13: AI Agents需要分工：限定领域的准确度优先
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="16-rule14-agents-direct-comm.html">
+            
+                <a href="16-rule14-agents-direct-comm.html">
+            
+                    
+                    Rule 14: AI Agents直接通信协作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="17-rule15-human-2-ai.html">
+            
+                <a href="17-rule15-human-2-ai.html">
+            
+                    
+                    Rule 15: 纯人->人机协作->无人：极限逼近无人模式使用MDA的方法论：CIM->PIM->PSM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="18-rule16-two-loop.html">
+            
+                <a href="18-rule16-two-loop.html">
+            
+                    
+                    Rule 16: 双圈运行，无阻力升级：外圈AI范式，内圈传统DevOps体系，外圈输出注入内圈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="19-rule17-obversable.html">
+            
+                <a href="19-rule17-obversable.html">
+            
+                    
+                    Rule 17: AI自动化流程的可观测性是强制约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="20-rule18-take-over.html">
+            
+                <a href="20-rule18-take-over.html">
+            
+                    
+                    Rule 18: 随时双向接管能力是强制约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="21-rule19-two-llm.html">
+            
+                <a href="21-rule19-two-llm.html">
+            
+                    
+                    Rule 19: 验证与生成环节环节的LLM必须不同
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="22-rule20-log-2-devops.html">
+            
+                <a href="22-rule20-log-2-devops.html">
+            
+                    
+                    Rule 20: 使用DevOps平台作为留痕平台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="23-rule21-evolve.html">
+            
+                <a href="23-rule21-evolve.html">
+            
+                    
+                    Rule 21: 程序员不会消失，只会进化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Rule 6: Kill IDE, Let IRE Be Born:  Integrated Requirement Environment</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rule-6-kill-ide-let-ire-be-born--integrated-requirement-environment">Rule 6: Kill IDE, Let IRE Be Born:  Integrated Requirement Environment</h1>
+<blockquote>
+<p>Created By <a href="mailto:rodney.vin@gmail.com" target="_blank">RV</a>, and licensed with Creative Commons "<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>"</p>
+</blockquote>
+<p>我所知道的、某些会让自己印象深刻的知识，其来源比较古怪。</p>
+<p>例如，第一次知道“大块头，小JJ”，是来自于《神鬼愿望》。</p>
+<p>当愿望实现，Elliot如愿变成了高大、帅气、威猛的NBA球星，以为他终于抱得美人归时，Alison却在他围巾滑落后，转身就走 。</p>
+<p>当时莫名奇妙，查阅后呵呵大笑。</p>
+<p>人，要会许愿。否则，一万个机会放在面前，你也永远抓它不住。</p>
+<p>我们已经与AI签下了“<strong>需求定义是唯一的人机契约</strong>”这个出卖灵魂的契约，那么如何确保我们的所得如我们所愿，就是一个技术性的工作了。</p>
+<p>每个人都是自己的第一责任人。</p>
+<p>我们自己必须为我们自己的“<strong>愿望、需求描述</strong>”的精确性与完整性负最终责任，任何模糊、短视或自以为是的描述，都可能被字面满足，但被实质背叛。</p>
+<p>而<strong>IRE</strong>，就是这个确保AI不会歪曲我们所愿的合规工具。</p>
+<h4 id="kill-ide">Kill IDE</h4>
+<p>老兵不死，只会慢慢凋零。</p>
+<p>IDE会永存，我们不会去怀疑这一点，但是它会异化、会转生。在终极无人范式下，人类也需要保留一个底层调试控制工具，已备在必要时介入，这个工具还会叫IDE。</p>
+<p>IDE，Integrated Development Environment，集成开发环境，是一个以Dev为核心的软件工程时代图腾式的标志。</p>
+<p>IDE的出现，隔离了复杂的命令、工具链，降低了开发者的认知负荷，开发者可以更专注于设计及代码层面的逻辑构建，编写、编译、调试代码的循环周期大幅缩短，代码补全、语法高亮、实时错误检查等功能为开发者提供实时辅助能力。</p>
+<p>很强！</p>
+<p>唯一令人苦笑的是，时代变了，人面不知何处去了。AI Programming时代，开发的主体是AI，人类在Dev阶段的存在会不断的弱化，向Req阶段转移。</p>
+<p>皮之不存，毛将焉附。IDE，终究会成为一个无人使用的艺术品，或者丢在角落里的工具箱，无火可救时，在角落里慢慢蒙尘。</p>
+<p>Kill IDE，IDE从软件工程的核心位置退出，产业主体向完成IRE的迁移，这是一个旧时代终结，新时代开启的标志。</p>
+<h4 id="let-ire-be-born">Let IRE Be Born</h4>
+<p><strong><em>Kill the boy and let the man be born.</em></strong></p>
+<p>--- Maester Aemon To Jon Snow</p>
+<p>我没什么创意，想到IDE会凋零，IRE会成为下一代软件工程整个流程的核心时，我脑子里浮现的是伊蒙学士对成为守夜人总司令的琼恩·雪诺讲的这句话。</p>
+<p>于是随手拿来借用。</p>
+<p>需求管理，需求工程必然是下一代软件工程整体流程的核心。</p>
+<p>而IRE，Integrated Requirement Environment，集成需求环境，则是人类工程师获取需求、分析需求，与AI交互、观测、控制过程、检验AI输出的人机集成环境。</p>
+<h4 id="btw">BTW</h4>
+<p>看了4月17日发布的XXXX Design，印象深刻。产业技术能力已经足够，范式变革之时已至。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="07-rule5-req-over-dev.html" class="navigation navigation-prev " aria-label="Previous page: Rule 5: 需求管理是核心：Requirement Over Development">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="09-rule7-arch-agents.html" class="navigation navigation-next " aria-label="Next page: Rule 7: 架构师+AI Agents">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Rule 6: Kill IDE, Let IRE Be Born:  Integrated Requirement Environment","level":"1.3.10","depth":2,"next":{"title":"Rule 7: 架构师+AI Agents","level":"1.3.11","depth":2,"path":"01-kreex-se/09-rule7-arch-agents.md","ref":"01-kreex-se/09-rule7-arch-agents.md","articles":[]},"previous":{"title":"Rule 5: 需求管理是核心：Requirement Over Development","level":"1.3.9","depth":2,"path":"01-kreex-se/07-rule5-req-over-dev.md","ref":"01-kreex-se/07-rule5-req-over-dev.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pubdate":"2026-04-26","author":"RV, rodney.vin@gmail.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"rights":"CC BY-NC-ND 4.0","title":"KreeX: 软件工程范式","language":"cn","gitbook":"*","publisher":"Self-Published","description":"面向面向AI Programming的软件工程范式思考与实践"},"file":{"path":"01-kreex-se/08-rule6-kill-ide.md","mtime":"2026-04-20T12:46:05.982Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-04-26T05:53:23.027Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
