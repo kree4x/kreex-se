@@ -37,4 +37,3 @@
   * [Rule 19: 验证与生成环节环节的LLM必须不同](01-kreex-se/21-rule19-two-llm.md)
   * [Rule 20: 使用DevOps平台作为留痕平台](01-kreex-se/22-rule20-log-2-devops.md)
   * [Rule 21: 程序员不会消失，只会进化](01-kreex-se/23-rule21-evolve.md)
-  
